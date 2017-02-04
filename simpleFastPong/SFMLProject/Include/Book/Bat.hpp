@@ -7,7 +7,7 @@ private:
 	float speed;
 
 public:
-	Bat();
+	Bat(float speed = 0.f);
 
 	void moveLeft();
 	void moveRight();
