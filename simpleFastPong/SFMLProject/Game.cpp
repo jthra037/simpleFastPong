@@ -26,7 +26,7 @@ Game::Game()
 	try
 	{
 		textures.load(Textures::Landscape, "Media/Textures/Desert.png");
-		textures.load(Textures::Airplane, "Media/Textures/Eagle.png");
+		textures.load(Textures::Bat, "Media/Textures/Eagle.png");
 		mFont.loadFromFile("Media/Sansation.ttf");
 #pragma endregion
 
@@ -41,7 +41,7 @@ Game::Game()
 	landscape.setTexture(mBackgroundTexture);
 	landscape.setTextureRect(sf::IntRect(0, 0, 1200, 800));
 
-	airplane.setTexture(textures.get(Textures::Airplane));
+	airplane.setTexture(textures.get(Textures::Bat));
 	airplane.setPosition(100.f, 100.f);
 
 	mFont.loadFromFile("Media/Sansation.ttf");

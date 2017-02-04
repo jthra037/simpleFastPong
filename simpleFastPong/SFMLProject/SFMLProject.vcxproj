@@ -119,10 +119,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Book\Ball.hpp" />
+    <ClInclude Include="Include\Book\Bat.hpp" />
     <ClInclude Include="Include\Book\Game.hpp" />
+    <ClInclude Include="Include\Book\GameObject.hpp" />
     <ClInclude Include="Include\Book\ResourceHolder.hpp" />
     <ClInclude Include="Include\Book\StringHelpers.hpp" />
   </ItemGroup>
