@@ -22,7 +22,6 @@
     <ProjectGuid>{AFE78A7E-F049-4A93-8BAC-39A3516B1689}</ProjectGuid>
     <RootNamespace>SFMLProject</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>SFMLWorldProject</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -119,24 +118,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Aircraft.cpp" />
-    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SceneNode.cpp" />
-    <ClCompile Include="SpriteNode.cpp" />
-    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\Book\Aircraft.hpp" />
-    <ClInclude Include="Include\Book\Entity.hpp" />
     <ClInclude Include="Include\Book\Game.hpp" />
     <ClInclude Include="Include\Book\ResourceHolder.hpp" />
-    <ClInclude Include="Include\Book\ResourceIdentifiers.hpp" />
-    <ClInclude Include="Include\Book\SceneNode.hpp" />
-    <ClInclude Include="Include\Book\SpriteNode.hpp" />
     <ClInclude Include="Include\Book\StringHelpers.hpp" />
-    <ClInclude Include="Include\Book\World.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

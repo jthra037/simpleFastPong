@@ -8,9 +8,17 @@ void ResourceHolder<Resource, Identifier>::load(Identifier id, const std::string
 		throw std::runtime_error("ResourceHolder::load - Failed to load " + filename);
 
 	// If loading successful, insert resource to map
+#pragma region step 4
+
+	//mResourceMap.insert(std::make_pair(id, std::move(resource)));
 	insertResource(id, std::move(resource));
+#pragma endregion
+
+	
 }
 
+
+#pragma region step 5
 template <typename Resource, typename Identifier>
 template <typename Parameter>
 void ResourceHolder<Resource, Identifier>::load(Identifier id, const std::string& filename, const Parameter& secondParam)
@@ -23,6 +31,8 @@ void ResourceHolder<Resource, Identifier>::load(Identifier id, const std::string
 	// If loading successful, insert resource to map
 	insertResource(id, std::move(resource));
 }
+
+#pragma endregion
 
 template <typename Resource, typename Identifier>
 Resource& ResourceHolder<Resource, Identifier>::get(Identifier id)
@@ -42,6 +52,10 @@ const Resource& ResourceHolder<Resource, Identifier>::get(Identifier id) const
 	return *found->second;
 }
 
+#pragma region step 3
+
+
+
 template <typename Resource, typename Identifier>
 void ResourceHolder<Resource, Identifier>::insertResource(Identifier id, std::unique_ptr<Resource> resource) 
 {
@@ -49,3 +63,5 @@ void ResourceHolder<Resource, Identifier>::insertResource(Identifier id, std::un
 	auto inserted = mResourceMap.insert(std::make_pair(id, std::move(resource)));
 	assert(inserted.second);
 }
+
+#pragma endregion
