@@ -12,6 +12,6 @@ public:
 
 	sf::RectangleShape getShape();
 	void update();
-	void moveLeft();
-	void moveRight();
+	void moveLeft(sf::Time elapsedTime);
+	void moveRight(sf::Time elapsedTime);
 };

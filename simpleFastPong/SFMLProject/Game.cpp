@@ -1,7 +1,7 @@
 #include <Book/Game.hpp>
 #include <Book/StringHelpers.hpp>
 
-const float Game::PlayerSpeed = 100.f;
+const float Game::PlayerSpeed = 600.f;
 const sf::Vector2f Game::batSize = sf::Vector2f(200.f, 25.f);
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
@@ -100,17 +100,11 @@ void Game::processEvents()
 
 void Game::update(sf::Time elapsedTime)
 {
-	sf::Vector2f movement(0.f, 0.f);
-	if (mIsMovingUp)
-		movement.y -= PlayerSpeed;
-	if (mIsMovingDown)
-		movement.y += PlayerSpeed;
 	if (mIsMovingLeft)
-		movement.x -= PlayerSpeed;
+		bat.moveLeft(elapsedTime);
 	if (mIsMovingRight)
-		movement.x += PlayerSpeed;
+		bat.moveRight(elapsedTime);
 
-	
 	// airplane.move(movement * elapsedTime.asSeconds()); Going to be bat movement
 }
 

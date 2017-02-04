@@ -6,6 +6,7 @@ Bat::Bat(sf::Vector2f size, float startSpeed, float x, float y)
 	, shape(size)
 {
 	shape.setFillColor(sf::Color::Black);
+	shape.setPosition(sf::Vector2f(x, y));
 }
 
 void Bat::update()
@@ -13,18 +14,18 @@ void Bat::update()
 	shape.setPosition(getPosition());
 }
 
-void Bat::moveLeft()
+void Bat::moveLeft(sf::Time elapsedTime)
 {
 	sf::Vector2f currentPos = getPosition();
-	currentPos.x -= speed;
+	currentPos.x -= speed * elapsedTime.asSeconds();
 	setPosition(currentPos);
 	update();
 }
 
-void Bat::moveRight()
+void Bat::moveRight(sf::Time elapsedTime)
 {
 	sf::Vector2f currentPos = getPosition();
-	currentPos.x += speed;
+	currentPos.x += speed * elapsedTime.asSeconds();
 	setPosition(currentPos);
 	update();
 }
