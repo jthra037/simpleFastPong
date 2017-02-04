@@ -7,3 +7,7 @@ Bat::Bat(float startSpeed, float x, float y)
 	// Maybe put something in here eventually 
 }
 
+void Bat::moveLeft()
+{
+	
+}
