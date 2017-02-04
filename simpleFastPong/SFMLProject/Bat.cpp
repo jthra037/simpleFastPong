@@ -9,5 +9,14 @@ Bat::Bat(float startSpeed, float x, float y)
 
 void Bat::moveLeft()
 {
-	
+	sf::Vector2f currentPos = getPosition();
+	currentPos.x -= speed;
+	setPosition(currentPos);
+}
+
+void Bat::moveRight()
+{
+	sf::Vector2f currentPos = getPosition();
+	currentPos.x += speed;
+	setPosition(currentPos);
 }
