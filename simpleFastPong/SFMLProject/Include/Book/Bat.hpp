@@ -11,6 +11,7 @@ public:
 	Bat(sf::Vector2f size, float startSpeed = 0.f, float x = 0.f, float y = 0.f);
 
 	sf::RectangleShape getShape();
+	void update();
 	void moveLeft();
 	void moveRight();
 };

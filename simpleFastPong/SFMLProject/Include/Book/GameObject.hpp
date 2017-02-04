@@ -9,7 +9,6 @@ private:
 
 public:
 	GameObject(float X = 0.f, float Y = 0.f);
-	void update(sf::Time elapsedTime);
 
 	sf::Vector2f getPosition();
 	void setPosition(sf::Vector2f newPos);
