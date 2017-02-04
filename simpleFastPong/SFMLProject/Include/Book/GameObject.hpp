@@ -6,12 +6,10 @@ class GameObject
 {
 private:
 	sf::Vector2f position;
-	sf::Sprite shape;
 
 public:
-	GameObject();
-	void update();
+	GameObject(float X = 0.f, float Y = 0.f);
+	void update(sf::Time elapsedTime);
 
-	void getPosition();
-	void getShape();
+	sf::Vector2f getPosition();
 };
