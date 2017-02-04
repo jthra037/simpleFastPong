@@ -4,7 +4,8 @@
 #include <Book/ResourceHolder.hpp>
 
 #include <SFML/Graphics.hpp>
-
+#include <Book\Ball.hpp>
+#include <Book\Bat.hpp>
 #include <iostream>
 
 class Game : private sf::NonCopyable
@@ -24,6 +25,7 @@ private:
 
 private:
 	static const float		PlayerSpeed;
+	static const sf::Vector2f batSize;
 	static const sf::Time	TimePerFrame;
 
 	sf::RenderWindow		mWindow;
@@ -31,8 +33,7 @@ private:
 	sf::Font				mFont;
 	sf::Text				mStatisticsText;
 	sf::Time				mStatisticsUpdateTime;
-	sf::Sprite				ball;
-	sf::Sprite				bat;
+	Bat						bat;
 
 	std::size_t				mStatisticsNumFrames;
 	bool					mIsMovingUp;

@@ -2,12 +2,12 @@
 #include <Book/StringHelpers.hpp>
 
 const float Game::PlayerSpeed = 100.f;
+const sf::Vector2f Game::batSize = sf::Vector2f(200.f, 25.f);
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game()
 	: mWindow(sf::VideoMode(1200, 800), "Resources", sf::Style::Close)
-	, ball()
-	, bat()
+	, bat(batSize, PlayerSpeed, 0, 0)
 	, mBackgroundTexture()
 	, mFont()
 	, mStatisticsText()
@@ -117,8 +117,7 @@ void Game::update(sf::Time elapsedTime)
 void Game::render()
 {
 	mWindow.clear(sf::Color::Blue);
-	mWindow.draw(ball);
-	mWindow.draw(bat);
+	mWindow.draw(bat.getShape());
 	mWindow.draw(mStatisticsText);
 	mWindow.display();
 }
