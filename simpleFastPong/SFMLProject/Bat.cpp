@@ -1,10 +1,11 @@
 #include "Book\Bat.hpp"
 
-Bat::Bat(float startSpeed, float x, float y) 
+Bat::Bat(sf::Vector2f size, float startSpeed, float x, float y) 
 	: GameObject(x, y)
 	, speed(startSpeed)
+	, shape(size)
 {
-	// Maybe put something in here eventually 
+	shape.setFillColor(sf::Color::Black);
 }
 
 void Bat::moveLeft()

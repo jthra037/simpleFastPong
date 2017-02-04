@@ -5,10 +5,12 @@ class Bat : private GameObject
 {
 private:
 	float speed;
+	sf::RectangleShape shape;
 
 public:
-	Bat(float startSpeed = 0.f, float x = 0.f, float y = 0.f);
+	Bat(sf::Vector2f size, float startSpeed = 0.f, float x = 0.f, float y = 0.f);
 
+	sf::RectangleShape getShape();
 	void moveLeft();
 	void moveRight();
 };
