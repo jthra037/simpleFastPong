@@ -6,14 +6,6 @@
 #include <SFML/Graphics.hpp>
 
 #include <iostream>
-namespace Textures
-{
-	enum ID
-	{
-		Landscape,
-		Bat,
-	};
-}
 
 class Game : private sf::NonCopyable
 {
@@ -39,11 +31,8 @@ private:
 	sf::Font				mFont;
 	sf::Text				mStatisticsText;
 	sf::Time				mStatisticsUpdateTime;
-	sf::Sprite				landscape;
-	sf::Sprite				airplane;
-
-	// Try to load resources
-	ResourceHolder<sf::Texture, Textures::ID> textures;
+	sf::Sprite				ball;
+	sf::Sprite				bat;
 
 	std::size_t				mStatisticsNumFrames;
 	bool					mIsMovingUp;

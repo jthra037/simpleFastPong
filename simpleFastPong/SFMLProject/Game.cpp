@@ -6,8 +6,8 @@ const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game()
 	: mWindow(sf::VideoMode(1200, 800), "Resources", sf::Style::Close)
-	, landscape()
-	, airplane()
+	, ball()
+	, bat()
 	, mBackgroundTexture()
 	, mFont()
 	, mStatisticsText()
@@ -25,8 +25,7 @@ Game::Game()
 
 	try
 	{
-		textures.load(Textures::Landscape, "Media/Textures/Desert.png");
-		textures.load(Textures::Bat, "Media/Textures/Eagle.png");
+		//
 		mFont.loadFromFile("Media/Sansation.ttf");
 #pragma endregion
 
@@ -36,6 +35,8 @@ Game::Game()
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
+	//Shouldn't need any of this since it's just primitive shapes
+    /*
 	mBackgroundTexture = textures.get(Textures::Landscape);
 	mBackgroundTexture.setRepeated(true);
 	landscape.setTexture(mBackgroundTexture);
@@ -43,6 +44,7 @@ Game::Game()
 
 	airplane.setTexture(textures.get(Textures::Bat));
 	airplane.setPosition(100.f, 100.f);
+	*/
 
 	mFont.loadFromFile("Media/Sansation.ttf");
 	mStatisticsText.setFont(mFont);
@@ -108,14 +110,15 @@ void Game::update(sf::Time elapsedTime)
 	if (mIsMovingRight)
 		movement.x += PlayerSpeed;
 
-	airplane.move(movement * elapsedTime.asSeconds());
+	
+	// airplane.move(movement * elapsedTime.asSeconds()); Going to be bat movement
 }
 
 void Game::render()
 {
-	mWindow.clear();
-	mWindow.draw(landscape);
-	mWindow.draw(airplane);
+	mWindow.clear(sf::Color::Blue);
+	mWindow.draw(ball);
+	mWindow.draw(bat);
 	mWindow.draw(mStatisticsText);
 	mWindow.display();
 }
